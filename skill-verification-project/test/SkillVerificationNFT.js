@@ -1,4 +1,5 @@
-const { ethers } = require("hardhat");
+const { ethers, network } = require("hardhat");
+import { Transaction } from '../../skill-verification-frontend/frontend/node_modules/ethers/lib.esm/transaction/transaction';
 
 // Your deployed contract address
 const contractAddress = "0xe768bB5e91256248984aaad14E47105EdfD7b880";
@@ -12,6 +13,8 @@ async function main() {
 
   // Connect to the deployed contract
   const contract = new ethers.Contract(contractAddress, abi, wallet);
+
+
 
   // Example usage
   console.log("Connected to contract:", contract.address);
